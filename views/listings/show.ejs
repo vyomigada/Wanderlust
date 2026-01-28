@@ -1,4 +1,21 @@
 <% layout('layouts/boilerplate') %>
+
+<!-- skeleton loading -->
+ <div id="skeleton-container" class="row">
+  <% for(let i = 0; i < 6; i++) { %>
+    <div class="col-md-4 mb-4">
+      <div class="skeleton-card">
+        <div class="skeleton-img"></div>
+        <div class="skeleton-text short"></div>
+        <div class="skeleton-text long"></div>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+
+
+
 <div class="row">
   <div class="col-8 offset-2">
     <h3><%= listing.title %></h3>
@@ -8,7 +25,7 @@
     <div class="show-img-container">
       <img
         src="<%= listing.image.url %>"
-        class="show-img"
+        class="show-img motion-img"
         alt="listing_image"
       />
     </div>
@@ -151,3 +168,8 @@
   ) %>;
 </script>
 <script src="/js/map.js"></script> -->
+
+
+
+
+

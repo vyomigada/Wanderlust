@@ -1,4 +1,8 @@
 <style>
+  #main-navbar{
+    will-change: transform;
+    
+  }
   .search-btn {
     background-color: #fe424d;
     color: white;
@@ -21,7 +25,7 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav id="main-navbar" class="navbar navbar-expand-md bg-body-light border-bottom sticky-top fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"
       ><i class="fa-regular fa-compass"></i
@@ -46,13 +50,14 @@
       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/listings/search" method="GET">
           <input
-            class="form-control me-2 search-input"
+            class="form-control me-2 search-input motion-search"
             type="search"
             name="q"
             placeholder="Search destinations"
             required
           />
-          <button class="btn search-btn" type="submit">
+
+          <button class="btn search-btn motion-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>Search
           </button>
         </form>

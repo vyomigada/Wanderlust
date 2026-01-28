@@ -55,6 +55,10 @@ body {
 .listing-card {
   border: none !important;
   margin-bottom: 2rem;
+  will-change: transform;
+  opacity: 0;
+  transform: translateY(40px);
+  overflow: hidden;
 }
 
 .card-img-top {
@@ -131,4 +135,66 @@ body {
   padding-right: 0;
 }
 
+.motion-search {
+  will-change: transform;
+}
+.motion-img {
+  will-change: transform;
+}
+
 /* Style for both Edit & Delete because both use .btn-btn-dark */
+
+/* skeleton styling */
+.skeleton-card {
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.skeleton-img {
+  height: 180px;
+  border-radius: 10px;
+  background: #e5e7eb;
+}
+
+.skeleton-text {
+  height: 14px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background: #e5e7eb;
+}
+
+.skeleton-text.short {
+  width: 40%;
+}
+
+.skeleton-text.long {
+  width: 70%;
+}
+
+/* shimmer effect */
+.skeleton-img,
+.skeleton-text {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+#page-wrapper{
+  opacity: 0;
+  transform: translateY(20px);
+}
