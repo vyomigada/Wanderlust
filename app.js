@@ -18,6 +18,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const bookingRouter=require("./routes/bookings.js")
 
 const user = require("./models/user.js");
 
@@ -83,6 +84,8 @@ app.use((req, res, next) => {
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
+app.use("/listings/:id/bookings", bookingRouter);
+
 app.use("/", userRouter);
 
 // app.all("*", (req, res, next) => {

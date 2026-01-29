@@ -19,7 +19,8 @@ module.exports.ShowListing = async (req, res) => {
         path: "author",
       },
     })
-    .populate("owner");
+    .populate("owner")
+    .populate("bookings");
   if (!listing) {
     throw new ExpressError(404, "Listing not found");
   }
