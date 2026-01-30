@@ -55,9 +55,6 @@ body {
 .listing-card {
   border: none !important;
   margin-bottom: 2rem;
-  will-change: transform;
-  opacity: 0;
-  transform: translateY(40px);
   overflow: hidden;
 }
 
@@ -195,6 +192,5 @@ body {
 }
 
 #page-wrapper{
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
 }

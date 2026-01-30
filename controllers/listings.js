@@ -1,4 +1,5 @@
 const Listing = require("../models/listing");
+const Booking = require("../models/booking");
 
 module.exports.index = async (req, res) => {
   const allListings = await Listing.find({});
@@ -19,16 +20,13 @@ module.exports.ShowListing = async (req, res) => {
         path: "author",
       },
     })
-    .populate("owner")
-    .populate("bookings");
+    .populate("owner");
   if (!listing) {
-    throw new ExpressError(404, "Listing not found");
+    req.flash("error", "Listing you requested for does not exist");
+    return res.redirect("/listings");
   }
-  if (!listing) {
-    req.flash("error", "Listing you requested for  does not exist");
-    res.redirect("/listings");
-  }
-  console.log(listing);
+  const bookings = await Booking.find({ listing: id, status: "confirmed" });
+  listing.bookings = bookings;
   res.render("listings/show.ejs", { listing });
 };
 
